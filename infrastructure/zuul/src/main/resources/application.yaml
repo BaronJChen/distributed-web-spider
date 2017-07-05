@@ -25,4 +25,4 @@ zuul:
       serviceId: frontend
     backend:
       path: /api/**
-      serviceId: gateway
+      serviceId: backend-entrance

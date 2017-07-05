@@ -4,6 +4,8 @@ import com.baron.common.annotation.ForLocalTest;
 import com.braon.program.ZuulApplication;
 import org.apache.log4j.Logger;
 import org.springframework.boot.SpringApplication;
+import org.springframework.util.Assert;
+import org.springframework.util.FileCopyUtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -47,12 +49,14 @@ public class BootstrapFrastructureApplication {
                 System.exit(-1);
             } // if
             SpringApplication.run(classes[i], "--spring.jmx.default-domain=${random.uuid}");
-            file.renameTo(new File(file.getPath() + "_backup" + i));
+            FileCopyUtils.copy(file, new File(file.getPath() + "_backup" + i));
+            file.delete();
         } // for
 
         for (int i = 0; i < length; ++i)  {
             File file = new File(classes[i].getClassLoader().getResource(files[i] + "_backup" + i).getPath());
-            file.renameTo(new File(file.getPath().substring(0, file.getPath().length() - 8)));
-        }
+            FileCopyUtils.copy(file, new File(file.getPath().substring(0, file.getPath().length() - 8)));
+            file.delete();
+        } // for
     }
 }

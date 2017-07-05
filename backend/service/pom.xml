@@ -12,12 +12,6 @@
     <artifactId>service</artifactId>
 
     <modules>
-        <module>bootstrap</module>
-        <module>download-service</module>
-        <module>login-service</module>
-        <module>analysis-service</module>
-        <module>process-service</module>
-        <module>pipeline-service</module>
     </modules>
 
 </project>
