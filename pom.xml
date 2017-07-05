@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.baron</groupId>
+    <artifactId>distributed-web-spider</artifactId>
+    <packaging>pom</packaging>
+    <version>0.001</version>
+    <modules>
+        <module>common</module>
+        <module>infrastructure</module>
+        <module>frontend</module>
+        <module>backend</module>
+    </modules>
+
+    <properties>
+        <common.version>0.001</common.version>
+        <spring.boot.version>1.5.3.RELEASE</spring.boot.version>
+        <spring.boot.web.version>1.5.3.RELEASE</spring.boot.web.version>
+        <spring.boot.actuator.version>1.5.3.RELEASE</spring.boot.actuator.version>
+        <spring.cloud.eureka.version>1.3.1.RELEASE</spring.cloud.eureka.version>
+        <spring.cloud.eureka.server.version>1.3.1.RELEASE</spring.cloud.eureka.server.version>
+        <spring.cloud.zuul.version>1.3.1.RELEASE</spring.cloud.zuul.version>
+        <java.version>1.8</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+            <version>${spring.boot.actuator.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>1.5.4.RELEASE</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

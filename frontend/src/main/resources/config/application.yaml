@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: frontend
+  resources:
+    static-locations: classpath:web/
+
+eureka:
+  instance:
+    hostname: frontend
+
+  client:
+    fetch-registry: false
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka

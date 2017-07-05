@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: zuul
+
+server:
+  port: 80
+
+eureka:
+  instance:
+    hostname: zuul
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    registry-fetch-interval-seconds: 10
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka
+
+zuul:
+  routes:
+    index:
+      path: /
+      url: http://zuul/web/html/index.html
+    frontend:
+      path: /web/**
+      serviceId: frontend
+    backend:
+      path: /api/**
+      serviceId: gateway

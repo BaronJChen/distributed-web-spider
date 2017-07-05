@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <base href="/web/html/" />
+    <title>首页</title>
+    <script data-main="/web/js/main/main" src="/web/js/lib/require.js">
+    </script>
+    <link rel="stylesheet" type="text/css" href="/web/style/index.css" />
+    <link rel="stylesheet" type="text/css" href="/web/style/base.css" />
+</head>
+
+<body>
+    <div class="div-container" ng-controller="indexController as indexCtrl">
+        <div class="div-left">
+            <div class="menu-bar-title">
+                <p>Web Spider</p>
+            </div>
+            <div class="menu menu-home">
+                <div class="icon menu-home-icon" ui-sref="home"></div>
+                <div class="text" ui-sref="home">{{ 'menu-home' | translate }}</div>
+            </div>
+            <div class="menu">
+                <div class="icon menu-create-task-icon" ui-sref="create-task"></div>
+                <div class="text" ui-sref="create-task">{{ 'menu-create-task' | translate }}</div>
+            </div>
+            <div class="menu">
+                <div class="icon menu-task-list-icon" ui-sref="task-list"></div>
+                <div class="text" ui-sref="task-list">{{ 'menu-task-list' | translate }}</div>
+            </div>
+            <div class="menu">
+                <div class="icon menu-template-list-icon" ui-sref="template-list"></div>
+                <div class="text" ui-sref="template-list">{{ 'menu-template-list' | translate }}</div>
+            </div>
+            <div class="menu">
+                <div class="icon menu-crontab-icon"  ui-sref="crontab"></div>
+                <div class="text" ui-sref="crontab">{{ 'menu-crontab' | translate }}</div>
+            </div>
+            <div class="menu">
+                <div class="icon menu-setup-icon" ui-sref="setup"></div>
+                <div class="text" ui-sref="setup">{{ 'menu-setup' | translate }}</div>
+            </div>
+        </div>
+
+        <div class="div-right">
+            <ui-view>
+            </ui-view>
+        </div>
+    </div>
+</body>
+
+</html>

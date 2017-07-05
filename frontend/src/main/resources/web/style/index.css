@@ -1,0 +1,88 @@
+@charset "utf-8";
+.div-container {
+    height: 100%;
+    width: 100%;
+}
+
+.div-left {
+    width: 260px;
+    height: 100%;
+    background-color: #30445c;
+    float: left;
+}
+
+.div-right {
+    width: calc(100% - 260px);
+    height: 100%;
+    float: left;
+}
+
+.menu-bar-title {
+    font-family: MicrosoftYaHei;
+    font-size: 22px;
+    text-align: left;
+    margin-left: 57px;
+    color: #ffffff;
+    padding-top: 10%;
+}
+
+.menu {
+    height: 70px;
+    padding-left: 57px;
+}
+
+.menu div {
+    float: left;
+    height: 20px;
+    cursor: pointer;
+}
+
+.menu-home {
+    margin-top: 28px;
+}
+
+.icon {
+    background-size: contain;
+    width: 20px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin: 25px 0 25px 8px;
+}
+
+.text {
+    font-family: MicrosoftYaHei;
+    font-size: 16px;
+    text-align: left;
+    line-height: 20px;
+    color: #ffffff;
+    margin: 25px 0 25px 8px;
+}
+
+.menu:hover {
+    background-color: #233142;
+    box-shadow: 1px 1.7px 5px 0 #040000c0;
+}
+
+.menu-home-icon {
+    background-image: url("/web/image/icon/home.png")
+}
+
+.menu-create-task-icon {
+    background-image: url("/web/image/icon/create-task.png")
+}
+
+.menu-task-list-icon {
+    background-image: url("/web/image/icon/task-list.png")
+}
+
+.menu-template-list-icon {
+    background-image: url("/web/image/icon/template-list.png")
+}
+
+.menu-crontab-icon {
+    background-image: url("/web/image/icon/crontab.png")
+}
+
+.menu-setup-icon {
+    background-image: url("/web/image/icon/setup.png")
+}
