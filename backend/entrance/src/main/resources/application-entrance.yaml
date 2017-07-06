@@ -3,16 +3,19 @@ spring:
     name: backend
 
 server:
-  port: ${random.int[10000,60000]}
+  port: 8082
 
 eureka:
   instance:
     hostname: backend
     lease-renewal-interval-in-seconds: 2
-    lease-expiration-duration-in-seconds: 3
+    lease-expiration-duration-in-seconds: 4
+    health-check-url: http://zuul/api/health
+    status-page-url: http://zuul/api/info
   client:
     service-url:
       defaultZone: http://eureka-server:8761/eureka
     fetch-registry: true
     register-with-eureka: true
     registry-fetch-interval-seconds: 2
+
