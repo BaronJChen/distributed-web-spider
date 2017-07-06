@@ -1,14 +1,15 @@
-package com.baron.eureka.program;
+package com.baron.bootstrap.program;
 
 import com.baron.common.annotation.ForLocalTest;
 import com.braon.program.ZuulApplication;
 import org.apache.log4j.Logger;
 import org.springframework.boot.SpringApplication;
-import org.springframework.util.Assert;
 import org.springframework.util.FileCopyUtils;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Administrator on 2017/7/4 0004.
@@ -31,30 +32,50 @@ public class BootstrapFrastructureApplication {
      * @param args
      * @throws IOException
      */
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
         Class[] classes = new Class[] {
                 EurekaApplication.class,
-                ZuulApplication.class
+                ZuulApplication.class,
+                FrontendApplication.class
         };
-        String[] files = new String[] {
+        String[] fileNames = new String[] {
+                "application.yaml",
                 "application.yaml",
                 "application.yaml"
         };
         int length = classes.length;
+        List<Thread> startupThreads = new ArrayList<>();
 
         for (int i = 0; i < length; ++i) {
-            File file = new File(classes[i].getClassLoader().getResource(files[i]).getPath());
-            if (!file.exists()) {
-                LOG.error("profile not exists");
+            final int count = i;
+
+            Thread startupThread = new Thread(() -> {
+                SpringApplication.run(classes[count], "--spring.jmx.default-domain=${random.uuid}");
+
+            });
+
+            startupThread.setPriority(Thread.MAX_PRIORITY);
+            startupThread.start();
+            startupThreads.add(startupThread);
+            Thread.currentThread().sleep(100000);
+
+            File file = new File(classes[count].getClassLoader().getResource(fileNames[count]).getPath());
+            try {
+                FileCopyUtils.copy(file, new File(file.getPath() + "_backup" + count));
+            } catch (IOException e) {
+                LOG.error(e);
                 System.exit(-1);
-            } // if
-            SpringApplication.run(classes[i], "--spring.jmx.default-domain=${random.uuid}");
-            FileCopyUtils.copy(file, new File(file.getPath() + "_backup" + i));
+            } // catch
+
             file.delete();
         } // for
 
+        for (Thread startupThread : startupThreads) {
+            startupThread.join();
+        } // for
+
         for (int i = 0; i < length; ++i)  {
-            File file = new File(classes[i].getClassLoader().getResource(files[i] + "_backup" + i).getPath());
+            File file = new File(classes[i].getClassLoader().getResource(fileNames[i] + "_backup" + i).getPath());
             FileCopyUtils.copy(file, new File(file.getPath().substring(0, file.getPath().length() - 8)));
             file.delete();
         } // for

@@ -13,7 +13,6 @@ import org.springframework.context.annotation.Configuration;
  * Created by Baron.Chen on 2017/6/15.
  */
 @Configuration
-@EnableAutoConfiguration
 @EnableConfigurationProperties(AppProperties.class)
 public class AppConfiguration {
     @Bean

@@ -2,6 +2,7 @@ package com.baron.gateway.model;
 
 import com.baron.gateway.concurrent.WebDriverPool;
 import org.eclipse.jetty.util.BlockingArrayQueue;
+import org.springframework.data.annotation.Id;
 import us.codecraft.webmagic.Spider;
 
 import java.util.Date;
@@ -15,6 +16,8 @@ import java.util.concurrent.ExecutorService;
  * Created by Baron.Chen on 2017/6/9.
  */
 public class SpiderTask {
+    @Id
+    private String id;
     private SpiderTemplate spiderTemplate;
     private Long successCount;
     private Long failedCount;
