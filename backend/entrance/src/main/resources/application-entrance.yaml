@@ -1,17 +1,15 @@
 spring:
   application:
-    name: backend
+    name: backend-entrance
 
 server:
   port: 8082
 
 eureka:
   instance:
-    hostname: backend
+    hostname: backend-entrance
     lease-renewal-interval-in-seconds: 2
     lease-expiration-duration-in-seconds: 4
-    health-check-url: http://zuul/api/health
-    status-page-url: http://zuul/api/info
   client:
     service-url:
       defaultZone: http://eureka-server:8761/eureka

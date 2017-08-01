@@ -22,12 +22,9 @@ zuul:
     root:
       path: /
       url: http://zuul/web/html/index.html
-    web-root:
-      path: /web
-      url: http://zuul/web/html/index.html
     frontend:
       path: /web/**
       serviceId: frontend
     backend:
       path: /api/**
-      serviceId: backend
+      serviceId: backend-entrance

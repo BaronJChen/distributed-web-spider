@@ -12,8 +12,8 @@ import org.springframework.boot.SpringApplication;
  * Created by Administrator on 2017/7/4 0004.
  */
 @ForLocalTest
-public class BootstrapFrastructureApplication {
-    private static final Logger LOG = Logger.getLogger(BootstrapFrastructureApplication.class);
+public class BootstrapApplication {
+    private static final Logger log = Logger.getLogger(BootstrapApplication.class);
 
     public static void main(String[] args) throws InterruptedException {
         Class[] classes = new Class[]{
