@@ -1,5 +1,6 @@
 package com.baron.entrance.program;
 
+import com.baron.common.annotation.SpiderApplication;
 import com.baron.entrance.util.LogUtil;
 import org.apache.log4j.Logger;
 import org.springframework.boot.CommandLineRunner;
@@ -14,9 +15,7 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 /**
  * Created by Jason on 2017/5/31.
  */
-@EnableEurekaClient
-@SpringBootApplication
-@ComponentScan("com.baron")
+@SpiderApplication
 @EnableMongoRepositories("com.baron")
 public class EntranceApplication {
     public static void main(String [] args) {

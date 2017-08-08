@@ -1,4 +1,4 @@
-package com.baron.entrance.program;
+package com.baron.common.program;
 
 import org.springframework.boot.context.embedded.ConfigurableEmbeddedServletContainer;
 import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;

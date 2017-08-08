@@ -1,9 +1,9 @@
 server:
-  port: 8082
+  port: 8085
 
 eureka:
   instance:
-    hostname: backend-entrance
+    hostname: backend-downloader
     lease-renewal-interval-in-seconds: 2
     lease-expiration-duration-in-seconds: 4
     health-check-url-path: /api/health
@@ -14,6 +14,8 @@ eureka:
     fetch-registry: true
     register-with-eureka: true
     registry-fetch-interval-seconds: 2
+logging:
+  level: debug
 
 
 

@@ -24,17 +24,7 @@
         </dependency>
         <dependency>
             <groupId>com.baron</groupId>
-            <artifactId>frontend</artifactId>
-            <version>0.001</version>
-        </dependency>
-        <dependency>
-            <groupId>com.baron</groupId>
-            <artifactId>entrance</artifactId>
-            <version>0.001</version>
-        </dependency>
-        <dependency>
-            <groupId>com.baron</groupId>
-            <artifactId>entrance</artifactId>
+            <artifactId>cd </artifactId>
             <version>0.001</version>
         </dependency>
     </dependencies>

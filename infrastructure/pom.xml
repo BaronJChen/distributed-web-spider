@@ -18,12 +18,4 @@
         <module>zuul</module>
     </modules>
 
-
-    <dependencies>
-        <dependency>
-            <groupId>com.baron</groupId>
-            <artifactId>common</artifactId>
-            <version>${common.version}</version>
-        </dependency>
-    </dependencies>
 </project>
