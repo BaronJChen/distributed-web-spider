@@ -1,5 +1,6 @@
 package com.baron.bootstrap.program;
 
+import com.baron.admin.program.AdminApplication;
 import com.baron.common.util.StringUtil;
 import com.baron.eureka.program.EurekaApplication;
 import com.baron.frontend.program.FrontendApplication;
@@ -18,6 +19,7 @@ public class BootstrapApplication {
                 EurekaApplication.class,
                 ZuulApplication.class,
                 FrontendApplication.class,
+                AdminApplication.class
         };
         String[][] argumentLists = new String[classes.length][];
         final String[] arguments = new String[]{"--spring.jmx.default-domain=${random.uuid}"};
@@ -25,6 +27,7 @@ public class BootstrapApplication {
         argumentLists[0] = new String[]{ "--spring.profiles.active=eureka" };
         argumentLists[1] = new String[]{ "--spring.profiles.active=zuul" };
         argumentLists[2] = new String[]{ "--spring.profiles.active=frontend" };
+        argumentLists[3] = new String[]{ "--spring.profiles.active=admin" };
 
         for (int i = 0, length = classes.length; i < length; ++i) {
             final int count = i;

@@ -28,3 +28,7 @@ zuul:
     backend:
       path: /api/**
       serviceId: backend-entrance
+
+management:
+  security:
+    enabled: false

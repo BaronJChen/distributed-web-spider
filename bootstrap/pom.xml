@@ -24,7 +24,18 @@
         </dependency>
         <dependency>
             <groupId>com.baron</groupId>
-            <artifactId>cd </artifactId>
+            <artifactId>frontend </artifactId>
+            <version>0.001</version>
+        </dependency>
+        <dependency>
+            <groupId>com.baron</groupId>
+            <artifactId>admin</artifactId>
+            <version>0.001</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.baron</groupId>
+            <artifactId>common</artifactId>
             <version>0.001</version>
         </dependency>
     </dependencies>

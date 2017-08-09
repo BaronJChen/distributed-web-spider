@@ -19,6 +19,7 @@
         <common.version>0.001</common.version>
         <spring.boot.version>1.5.4.RELEASE</spring.boot.version>
         <spring.boot.web.version>${spring.boot.version}</spring.boot.web.version>
+        <spring.boot.admin.version>1.5.3</spring.boot.admin.version>
         <spring.boot.actuator.version>${spring.boot.version}</spring.boot.actuator.version>
 
         <spring.boot.data.mongodb.version>${spring.boot.version}</spring.boot.data.mongodb.version>

@@ -1,0 +1,18 @@
+server:
+  port: 9000
+
+eureka:
+  instance:
+    hostname: admin
+    lease-renewal-interval-in-seconds: 2
+    lease-expiration-duration-in-seconds: 4
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka
+    fetch-registry: true
+    register-with-eureka: true
+    registry-fetch-interval-seconds: 2
+
+management:
+  security:
+    enabled: false
