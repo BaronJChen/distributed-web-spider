@@ -5,7 +5,7 @@ import com.baron.common.model.Proxy;
 
 import java.util.List;
 
-public interface ProxyProvider {
+public interface ProxyProvider extends BaseProvider {
     Proxy getProxy();
     List<Proxy> getProxies(int num);
 }
