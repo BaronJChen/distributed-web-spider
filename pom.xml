@@ -8,6 +8,15 @@
     <artifactId>distributed-web-spider</artifactId>
     <packaging>pom</packaging>
     <version>0.001</version>
+    <description>分布式爬虫项目</description>
+
+    <developers>
+        <developer>
+            <name>BaronChen</name>
+            <email>jiuyibuzui@outlook.com</email>
+        </developer>
+    </developers>
+
     <modules>
         <module>infrastructure</module>
         <module>frontend</module>
@@ -43,6 +52,13 @@
         <maven.compiler.target>${java.version}</maven.compiler.target>
     </properties>
 
+    <repositories>
+        <repository>
+            <id>aliyun-maven</id>
+            <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+        </repository>
+    </repositories>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -69,20 +85,15 @@
         </dependency>
     </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>1.5.4.RELEASE</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
+    <profiles>
+        <profile>
+            <id>local</id>
+            <modules>
+                <module>infrastructure</module>
+                <module>frontend</module>
+                <module>backend</module>
+                <module>test</module>
+            </modules>
+        </profile>
+    </profiles>
 </project>

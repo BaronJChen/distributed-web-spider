@@ -8,7 +8,6 @@
         <version>0.001</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
     <artifactId>bootstrap</artifactId>
 
     <dependencies>
@@ -39,4 +38,23 @@
             <version>0.001</version>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.0.2</version>
+                <executions>
+                    <execution>
+                        <id>default-jar</id>
+                        <phase>never</phase>
+                        <configuration>
+                            <finalName>unwanted</finalName>
+                            <classifier>unwanted</classifier>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
