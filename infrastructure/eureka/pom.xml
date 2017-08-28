@@ -26,7 +26,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>1.5.4.RELEASE</version>
+                <version>1.5.6.RELEASE</version>
                 <executions>
                     <execution>
                         <goals>
@@ -34,7 +34,11 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <mainClass>com.baron.eureka.program.EurekaApplication</mainClass>
+                </configuration>
             </plugin>
         </plugins>
+        <finalName>eureka.jar</finalName>
     </build>
 </project>

@@ -4,7 +4,7 @@ import com.baron.admin.program.AdminApplication;
 import com.baron.common.util.StringUtil;
 import com.baron.eureka.program.EurekaApplication;
 import com.baron.frontend.program.FrontendApplication;
-import com.braon.zuul.program.ZuulApplication;
+import com.baron.zuul.program.ZuulApplication;
 import org.apache.log4j.Logger;
 import org.springframework.boot.SpringApplication;
 

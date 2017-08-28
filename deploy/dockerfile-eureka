@@ -1,0 +1,3 @@
+FROM java
+MAINTAINER "BaronChen"
+COPY infrastructure/eureka/target/eureka.jar /root
