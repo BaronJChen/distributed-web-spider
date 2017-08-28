@@ -1,0 +1,14 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: jenkins-volume
+  labels:
+    type: local
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 30Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/var/jenkins_home"
