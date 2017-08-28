@@ -39,6 +39,6 @@
                 </configuration>
             </plugin>
         </plugins>
-        <finalName>eureka.jar</finalName>
+        <finalName>eureka</finalName>
     </build>
 </project>
