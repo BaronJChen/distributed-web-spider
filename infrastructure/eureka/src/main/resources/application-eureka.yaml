@@ -3,7 +3,7 @@ server:
 
 eureka:
   instance:
-    hostname: eureka-server
+    hostname: eureka
   server:
     eviction-interval-timer-in-ms: 5000
   client:
