@@ -1,5 +1,5 @@
 #!/bin/bash
-REGISTRY=registry.cn-hangzhou.aliyuncs.com/dsw/
+REGISTRY=registry.cn-hangzhou.aliyuncs.com/dsw
 VERSION=0.001
 mvn clean
 # maven is installed '/var/jenkins_home'
