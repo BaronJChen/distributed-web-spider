@@ -6,5 +6,5 @@ REGISTRY_NAMESPACE=registry.cn-hangzhou.aliyuncs.com/dsw
 VERSION=0.001
 WORKSPACE_HOME=`pwd`
 
-source deploy/compile.sh
-source deploy/deploy.sh
+source script/compile.sh
+source script/deploy.sh
