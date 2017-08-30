@@ -12,5 +12,6 @@ spec:
       containers:
       - name: eureka
         image: ${REGISTRY}/eureka:${VERSION}
+        imagePullPolicy: Always
         ports:
         - containerPort: 8761
