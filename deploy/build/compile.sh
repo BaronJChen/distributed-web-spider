@@ -11,4 +11,5 @@ mvn -pl '!bootstrap' install -amd -X
 # 编译并且推送镜像
 # 192.168.28.12:5000应该被写入环境变量
 docker build -f deploy/dockerfile/eureka -t="$registry/eureka:$VERSION" .
+docker login --username=18115198992 registry.cn-hangzhou.aliyuncs.com --password=14162536binchen
 docker push $registry/eureka:$VERSION
