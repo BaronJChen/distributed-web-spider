@@ -15,7 +15,7 @@ eureka:
     register-with-eureka: true
     registry-fetch-interval-seconds: 2
     service-url:
-      defaultZone: http://eureka-server:8761/eureka
+      defaultZone: http://eureka:8761/eureka
 
 zuul:
   routes:

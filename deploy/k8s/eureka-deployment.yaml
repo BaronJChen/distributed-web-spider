@@ -11,6 +11,6 @@ spec:
     spec:
       containers:
       - name: eureka
-        image: registry.cn-hangzhou.aliyuncs.com/dsw/eureka:0.001
+        image: ${REGISTRY}/eureka:${VERSION}
         ports:
-        - containerPort: 6379
+        - containerPort: 8761
