@@ -8,4 +8,6 @@ do
     sed -i 's@${VERSION}@'"$VERSION"'@g'  $WORKSPACE_HOME/deploy/k8s/$file;
 done
 
+#暂时不用滚动升级
+kubectl delete -f $WORKSPACE_HOME/deploy/k8s/
 kubectl create -f $WORKSPACE_HOME/deploy/k8s/
