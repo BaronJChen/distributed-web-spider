@@ -1,4 +1,4 @@
 FROM java
 MAINTAINER 'BaronChen'
 COPY infrastructure/eureka/target/eureka.jar /root
-ENTRYPOINT '/usr/bin/java -jar /root/eureka.jar'
+ENTRYPOINT ["/usr/bin/java", "-jar" ,"/root/eureka.jar"]
