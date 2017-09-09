@@ -7,4 +7,4 @@ mvn clean -pl '!bootstrap' install -amd
 docker build -f deploy/dockerfile/eureka -t="$REGISTRY/eureka:$VERSION" .
 
 # 推送镜像
-docker push $REGISTRY/eureka:$VERSION
+docker push $REGISTRY/eureka:$VERSIONdocker 
