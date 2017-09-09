@@ -1,4 +1,6 @@
 #!/bin/bash
+which mvn 
+echo $PATH
 
 mvn clean
 # maven is installed '/var/jenkins_home'
