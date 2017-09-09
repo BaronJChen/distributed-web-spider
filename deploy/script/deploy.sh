@@ -9,6 +9,6 @@ do
 done
 
 #暂时不用滚动升级
-kubectl delete -f $WORKSPACE_HOME/deploy/k8s/ 2> result
-cat result
+kubectl delete -f $WORKSPACE_HOME/deploy/k8s/
+
 kubectl create -f $WORKSPACE_HOME/deploy/k8s/
