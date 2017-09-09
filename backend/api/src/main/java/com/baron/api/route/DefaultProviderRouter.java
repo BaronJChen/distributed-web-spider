@@ -3,15 +3,15 @@ package com.baron.api.route;
 import com.baron.api.provider.BaseProvider;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.security.Provider;
 import java.util.HashMap;
-import java.util.List;
 
-public class DefaultProviderRoute implements ProviderRouter {
-    private static final Logger logger =Logger.getLogger(DefaultProviderRoute.class);
+@Component
+public class DefaultProviderRouter implements ProviderRouter {
+    private static final Logger logger =Logger.getLogger(DefaultProviderRouter.class);
 
     @Autowired
     HashMap<String, BaseProvider> baseProviders;
