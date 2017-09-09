@@ -14,4 +14,3 @@ kubectl delete --ignore-not-found=true -f $WORKSPACE_HOME/deploy/k8s/
 kubectl delete -f $WORKSPACE_HOME/deploy/k8s/
 
 kubectl create -f $WORKSPACE_HOME/deploy/k8s
-fix/
