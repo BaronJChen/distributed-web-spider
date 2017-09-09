@@ -84,16 +84,4 @@
             <version>${httpcore.version}</version>
         </dependency>
     </dependencies>
-
-    <profiles>
-        <profile>
-            <id>local</id>
-            <modules>
-                <module>infrastructure</module>
-                <module>frontend</module>
-                <module>backend</module>
-                <module>test</module>
-            </modules>
-        </profile>
-    </profiles>
 </project>

@@ -20,8 +20,8 @@
         </dependency>
     </dependencies>
 
-
     <build>
+    
         <finalName>eureka</finalName>
         <plugins>
             <plugin>
