@@ -1,0 +1,26 @@
+server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: eureka
+    lease-expiration-duration-in-seconds: 5
+    lease-renewal-interval-in-seconds: 2
+  server:
+    # 两秒扫描一次注册的服务
+    eviction-interval-timer-in-ms: 5000
+  client:
+    # eureka之间相互注册
+    register-with-eureka: true
+    # 获取其他服务的注册信息
+    fetch-registry: true
+    # 使用kubernetes的负载均衡机制获取多机器的注册信息
+    use-dns-for-fetching-service-urls: true
+    # 两秒同步一次注册信息
+    registry-fetch-interval-seconds: 2
+    # 向其他机器进行注册
+    service-url:
+      defaultZone: http://eureka:8761/eureka
+
+
+

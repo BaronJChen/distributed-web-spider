@@ -1,0 +1,1 @@
+jenkins编译脚本内如果包含docker等命令，最简单的方法就是不把jenkins装在docker之内。

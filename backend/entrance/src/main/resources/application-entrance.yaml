@@ -10,7 +10,7 @@ eureka:
     status-page-url-path: /api/info
   client:
     service-url:
-      defaultZone: http://eureka-server:8761/eureka
+      defaultZone: http://eureka:8761/eureka
     fetch-registry: true
     register-with-eureka: true
     registry-fetch-interval-seconds: 2

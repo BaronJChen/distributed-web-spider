@@ -1,0 +1,4 @@
+FROM java
+MAINTAINER "jason-null@foxmail.com"
+COPY infrastructure/zuul/target/zuul.jar /root
+ENTRYPOINT ["/usr/bin/java", "-jar", "/root/zuul.jar"]

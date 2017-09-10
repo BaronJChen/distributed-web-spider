@@ -1,4 +1,4 @@
 FROM java
-MAINTAINER 'BaronChen'
+MAINTAINER "jason-null@foxmail.com"
 COPY infrastructure/eureka/target/eureka.jar /root
-ENTRYPOINT ["/usr/bin/java", "-jar", "-Dspring.profiles.active=eureka", "/root/eureka.jar"]
+ENTRYPOINT ["/usr/bin/java", "-jar", "/root/eureka.jar"]
