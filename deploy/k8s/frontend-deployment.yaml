@@ -1,17 +1,17 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: zuul-deployment
+  name: frontend-deployment
 spec:
   replicas: 2
   template:
     metadata:
       labels:
-        app: zuul
+        app: frontend
     spec:
       containers:
-      - name: zuul
-        image: ${REGISTRY}/zuul:${VERSION}
+      - name: eureka
+        image: ${REGISTRY}/frontend:${VERSION}
         imagePullPolicy: Always
         ports:
-        - containerPort: 80
+        - containerPort: 8080

@@ -11,9 +11,9 @@ eureka:
   instance:
     hostname: frontend
     lease-renewal-interval-in-seconds: 2
-    lease-expiration-duration-in-seconds: 10
+    lease-expiration-duration-in-seconds: 5
   client:
     fetch-registry: false
     register-with-eureka: true
     service-url:
-      defaultZone: http://eureka-server:8761/eureka
+      defaultZone: http://eureka:8761/eureka

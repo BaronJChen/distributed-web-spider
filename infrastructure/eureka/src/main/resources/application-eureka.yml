@@ -1,3 +1,7 @@
+spring:
+  application:
+    name: eureka
+
 server:
   port: 8761
 
@@ -7,20 +11,18 @@ eureka:
     lease-expiration-duration-in-seconds: 5
     lease-renewal-interval-in-seconds: 2
   server:
-    # Á½ÃëÉ¨ÃèÒ»´Î×¢²áµÄ·şÎñ
+    # ä¸¤ç§’æ‰«æä¸€æ¬¡æ³¨å†Œçš„æœåŠ¡
     eviction-interval-timer-in-ms: 5000
+    # å¼ºåˆ¶æŸåçš„æœåŠ¡ä¸‹çº¿
+    enable-self-preservation: false
   client:
-    # eurekaÖ®¼äÏà»¥×¢²á
+    # eurekaä¹‹é—´ç›¸äº’æ³¨å†Œ
     register-with-eureka: true
-    # »ñÈ¡ÆäËû·şÎñµÄ×¢²áĞÅÏ¢
+    # è·å–å…¶ä»–æœåŠ¡çš„æ³¨å†Œä¿¡æ¯
     fetch-registry: true
-    # Ê¹ÓÃkubernetesµÄ¸ºÔØ¾ùºâ»úÖÆ»ñÈ¡¶à»úÆ÷µÄ×¢²áĞÅÏ¢
-    use-dns-for-fetching-service-urls: true
-    # Á½ÃëÍ¬²½Ò»´Î×¢²áĞÅÏ¢
+    # ä¸¤ç§’åŒæ­¥ä¸€æ¬¡æ³¨å†Œä¿¡æ¯
     registry-fetch-interval-seconds: 2
-    # ÏòÆäËû»úÆ÷½øĞĞ×¢²á
+    # å‘å…¶ä»–æœºå™¨è¿›è¡Œæ³¨å†Œ
     service-url:
       defaultZone: http://eureka:8761/eureka
-
-
 

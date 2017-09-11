@@ -8,6 +8,6 @@ do
     sed -i 's@${VERSION}@'"$VERSION"'@g'  $WORKSPACE_HOME/deploy/k8s/$file;
 done
 
-# 存在就删除
+# exists and delete
 kubectl delete --ignore-not-found=true -f $WORKSPACE_HOME/deploy/k8s/
 kubectl create -f $WORKSPACE_HOME/deploy/k8s/

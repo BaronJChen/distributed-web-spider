@@ -1,0 +1,4 @@
+FROM java
+MAINTAINER "jason-null@foxmail.com"
+COPY frontend/target/frontend.jar /root
+ENTRYPOINT ["/usr/bin/java", "-jar", "/root/frontend.jar"]

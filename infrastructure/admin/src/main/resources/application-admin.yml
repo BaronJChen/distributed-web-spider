@@ -1,5 +1,9 @@
+spring:
+  application:
+    name: admin
+
 server:
-  port: 9000
+  port: 8000
 
 eureka:
   instance:
@@ -8,7 +12,7 @@ eureka:
     lease-expiration-duration-in-seconds: 4
   client:
     service-url:
-      defaultZone: http://eureka-server:8761/eureka
+      defaultZone: http://eureka:8761/eureka
     fetch-registry: true
     register-with-eureka: true
     registry-fetch-interval-seconds: 2
