@@ -26,3 +26,6 @@ eureka:
     service-url:
       defaultZone: http://eureka:8761/eureka
 
+management:
+  security:
+    enabled: false
