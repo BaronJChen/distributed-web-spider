@@ -1,33 +1,26 @@
 spring:
   application:
-    name: frontend
-  resources:
-    static-locations: classpath:web/
+    name: zipkin
   zipkin:
     base-url: http://zipkin:9411
   sleuth:
     sampler:
       percentage: 1
 
+
 server:
-  port: 8080
-  tomcat:
-    accesslog:
-      file-date-format: yyyy-MM-dd
-      enabled: true
-      request-attributes-enabled: true
-      buffered: true
-    basedir: logs
+  port: 9411
 
 eureka:
   instance:
-    hostname: frontend
+    hostname: zipkin
     prefer-ip-address: true
 #    lease-renewal-interval-in-seconds: 2
 #    lease-expiration-duration-in-seconds: 10
   client:
-    fetch-registry: false
+    fetch-registry: true
     register-with-eureka: true
+    registry-fetch-interval-seconds: 2
     service-url:
       defaultZone: http://eureka:8761/eureka
 

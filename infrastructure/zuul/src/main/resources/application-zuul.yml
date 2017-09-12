@@ -1,9 +1,21 @@
 spring:
   application:
     name: zuul
+  zipkin:
+    base-url: http://zipkin:9411
+  sleuth:
+    sampler:
+      percentage: 1
 
 server:
   port: 80
+  tomcat:
+    accesslog:
+      file-date-format: yyyy-MM-dd
+      enabled: true
+      request-attributes-enabled: true
+      buffered: true
+    basedir: logs
 
 eureka:
   instance:
