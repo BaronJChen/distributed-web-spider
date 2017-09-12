@@ -21,7 +21,7 @@ zuul:
   routes:
     root:
       path: /
-      url: http://frontend:8080/web/html/index.html
+      url: http://frontend:8080/html/index.html
     frontend:
       path: /web/**
       serviceId: frontend
