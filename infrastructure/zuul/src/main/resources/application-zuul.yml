@@ -8,8 +8,8 @@ server:
 eureka:
   instance:
     hostname: zuul
-    lease-renewal-interval-in-seconds: 2
-    lease-expiration-duration-in-seconds: 10
+#    lease-renewal-interval-in-seconds: 2
+#    lease-expiration-duration-in-seconds: 10
   client:
     fetch-registry: true
     register-with-eureka: true

@@ -6,12 +6,17 @@ spring:
 
 server:
   port: 8080
+  tomcat:
+    accesslog:
+      file-date-format: yyyy-MM-dd
+      enabled: true
 
 eureka:
   instance:
     hostname: frontend
-    lease-renewal-interval-in-seconds: 2
-    lease-expiration-duration-in-seconds: 10
+    prefer-ip-address: true
+#    lease-renewal-interval-in-seconds: 2
+#    lease-expiration-duration-in-seconds: 10
   client:
     fetch-registry: false
     register-with-eureka: true

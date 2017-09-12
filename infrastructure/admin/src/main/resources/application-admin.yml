@@ -8,8 +8,9 @@ server:
 eureka:
   instance:
     hostname: admin
-    lease-renewal-interval-in-seconds: 2
-    lease-expiration-duration-in-seconds: 10
+    prefer-ip-address: true
+#    lease-renewal-interval-in-seconds: 2
+#    lease-expiration-duration-in-seconds: 10
   client:
     service-url:
       defaultZone: http://eureka:8761/eureka
