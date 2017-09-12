@@ -16,6 +16,7 @@ server:
       request-attributes-enabled: true
       buffered: true
     basedir: logs
+    max-threads: 1000
 
 eureka:
   instance:
