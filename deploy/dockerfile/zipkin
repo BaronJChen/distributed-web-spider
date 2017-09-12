@@ -1,0 +1,4 @@
+FROM java
+MAINTAINER "jason-null@foxmail.com"
+COPY infrastructure/zipkin/target/zipkin.jar /root
+ENTRYPOINT ["/usr/bin/java", "-jar", "/root/zipkin.jar"]

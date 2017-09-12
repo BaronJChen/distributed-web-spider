@@ -25,4 +25,24 @@
             <version>${zipkin.ui.version}</version>
         </dependency>
     </dependencies>
+
+    <build>
+        <finalName>zipkin</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <mainClass>com.baron.zipkin.program.ZipkinApplication</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

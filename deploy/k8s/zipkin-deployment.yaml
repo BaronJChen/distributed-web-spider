@@ -1,0 +1,17 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: zipkin-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: zipkin
+    spec:
+      containers:
+      - name: zipkin
+        image: ${REGISTRY}/zipkin:${VERSION}
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 9411
