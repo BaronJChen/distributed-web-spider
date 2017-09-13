@@ -26,6 +26,7 @@ public class AppCache {
         threadLocalCache.get().put(key, value);
     }
 
+    @SuppressWarnings("unchecked")
     public static <T> T getThreadLocal(Object key) {
         if (threadLocalCache.get() == null) {
             return null;

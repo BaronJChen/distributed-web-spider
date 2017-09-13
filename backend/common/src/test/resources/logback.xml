@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+    <property name="LOG_PATTERN"
+              value="%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %yellow(at %class.%method) \\(%file:%line\\) %n%red(%m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx})"/>
+
+    <appender name="Console" class="com.baron.common.log.SpiderLogAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>DEBUG</level>
+        </filter>
+        <encoder charset="UTF-8">
+            <pattern>${LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="RollingFileTRACE"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>TRACE</level>
+        </filter>
+        <rollingPolicy
+                class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>
+                logs/dsw_%d{yyyy-MM-dd}_trace.log
+            </fileNamePattern>
+            <maxHistory>100</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="RollingFileERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level>
+        </filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>
+                logs/dsw_%d{yyyy-MM-dd}_error.log
+            </fileNamePattern>
+            <maxHistory>100</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="ASYNC_FILE" class="ch.qos.logback.classic.AsyncAppender">
+        <discardingThreshold>0</discardingThreshold>
+        <appender-ref ref="RollingFileTRACE"/>
+    </appender>
+
+    <root level="DEBUG">
+        <appender-ref ref="RollingFileERROR"/>
+        <appender-ref ref="RollingFileTRACE"/>
+        <appender-ref ref="Console"/>
+    </root>
+
+    <!--<logger name="org.springframework" level="WARN"/>-->
+    <!--<logger name="org.springframework.web" level="WARN"/>-->
+    <!--<logger name="com.opensymphony" level="WARN"/>-->
+    <!--<logger name="org.apache" level="WARN"/>-->
+    <!--<logger name="org.mongodb.driver" level="WARN"/>-->
+    <!--<logger name="org.hibernate.validator.internal" level="WARN"/>-->
+</configuration>

@@ -28,6 +28,7 @@
     <properties>
         <common.version>0.001</common.version>
         <spring.boot.version>1.5.4.RELEASE</spring.boot.version>
+        <spring.boot.test.version>${spring.boot.version}</spring.boot.test.version>
         <spring.boot.web.version>${spring.boot.version}</spring.boot.web.version>
         <spring.boot.admin.version>1.5.3</spring.boot.admin.version>
         <spring.boot.actuator.version>${spring.boot.version}</spring.boot.actuator.version>
@@ -67,6 +68,14 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
             <version>${spring.boot.actuator.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <version>${spring.boot.test.version}</version>
+            <scope>test</scope>
+        </dependency>
+
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>

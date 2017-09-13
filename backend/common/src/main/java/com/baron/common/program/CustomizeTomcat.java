@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
  * Created by Baron.Chen on 2017/6/3.
  */
 @Component
-public class CustomServletContainer implements EmbeddedServletContainerCustomizer {
+public class CustomizeTomcat implements EmbeddedServletContainerCustomizer {
     public void customize(ConfigurableEmbeddedServletContainer configurableEmbeddedServletContainer) {
         configurableEmbeddedServletContainer.setContextPath("/api");
     }
