@@ -8,6 +8,7 @@ eureka:
 #    lease-expiration-duration-in-seconds: 4
     health-check-url-path: /health
     status-page-url-path: /info
+    prefer-ip-address: true
   client:
     service-url:
       defaultZone: http://eureka:8761/eureka

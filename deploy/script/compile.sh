@@ -2,7 +2,7 @@
 # -pl is used to skip bootstrap module here
 # -amd is to install the dependency automically
 cd $WORKSPACE_HOME
-mvn clean -pl '!bootstrap' install -amd
+mvn clean -pl '!bootstrap' install -amd -Dmaven.test.skip=true
 
 # compile images
 docker build -f deploy/dockerfile/eureka -t="$REGISTRY/eureka:$VERSION" .
