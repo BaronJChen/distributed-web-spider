@@ -1,7 +1,6 @@
 package com.baron.api.provider;
 
-import com.baron.common.annotation.SpiderProvider;
-import com.baron.common.model.Proxy;
+import com.baron.backend.common.model.Proxy;
 
 import java.util.List;
 

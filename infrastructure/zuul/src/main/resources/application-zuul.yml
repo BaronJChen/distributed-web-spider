@@ -6,7 +6,8 @@ spring:
   sleuth:
     sampler:
       percentage: 100
-
+  resources:
+    static-locations: /
 server:
   port: 80
   tomcat:

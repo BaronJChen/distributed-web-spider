@@ -5,7 +5,7 @@
     <property name="LOG_PATTERN"
               value="%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %yellow(at %class.%method) \\(%file:%line\\) %n%red(%m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx})"/>
 
-    <appender name="Console" class="com.baron.common.log.SpiderLogAppender">
+    <appender name="ConsoleDEBUG" class="ch.qos.logback.core.ConsoleAppender">
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
             <level>DEBUG</level>
         </filter>
@@ -51,10 +51,10 @@
         <appender-ref ref="RollingFileTRACE"/>
     </appender>
 
-    <root level="DEBUG">
+    <root level="INFO">
         <appender-ref ref="RollingFileERROR"/>
         <appender-ref ref="RollingFileTRACE"/>
-        <appender-ref ref="Console"/>
+        <appender-ref ref="ConsoleDEBUG"/>
     </root>
 
     <!--<logger name="org.springframework" level="WARN"/>-->

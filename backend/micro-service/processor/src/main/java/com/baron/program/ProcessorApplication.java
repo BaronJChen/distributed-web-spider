@@ -1,6 +1,6 @@
 package com.baron.program;
 
-import com.baron.common.annotation.SpiderApplication;
+import com.baron.backend.common.annotation.SpiderApplication;
 import org.springframework.boot.SpringApplication;
 
 @SpiderApplication

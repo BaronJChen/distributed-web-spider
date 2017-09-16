@@ -1,7 +1,7 @@
 package com.baron.api.feign;
 
-import com.baron.common.model.Page;
-import com.baron.common.model.Request;
+import com.baron.backend.common.model.Page;
+import com.baron.backend.common.model.Request;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;

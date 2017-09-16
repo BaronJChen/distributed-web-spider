@@ -4,10 +4,10 @@ server:
 eureka:
   instance:
     hostname: backend-entrance
-    lease-renewal-interval-in-seconds: 2
-    lease-expiration-duration-in-seconds: 4
-    health-check-url-path: /api/health
-    status-page-url-path: /api/info
+#    lease-renewal-interval-in-seconds: 2
+#    lease-expiration-duration-in-seconds: 4
+    health-check-url-path: /health
+    status-page-url-path: /info
   client:
     service-url:
       defaultZone: http://eureka:8761/eureka
@@ -15,5 +15,7 @@ eureka:
     register-with-eureka: true
     registry-fetch-interval-seconds: 2
 
-
+management:
+  security:
+    enabled: false
 
