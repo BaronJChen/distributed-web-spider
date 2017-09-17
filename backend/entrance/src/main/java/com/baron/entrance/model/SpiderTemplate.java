@@ -3,6 +3,8 @@ package com.baron.entrance.model;
 import com.baron.backend.common.model.BaseModel;
 import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -15,6 +17,8 @@ import java.util.Map;
  * Created by Jason on 2017/6/11.
  */
 @Data
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
 @Document
 public class SpiderTemplate extends BaseModel {
     @NotNull
