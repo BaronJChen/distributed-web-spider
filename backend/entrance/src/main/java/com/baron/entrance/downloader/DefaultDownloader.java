@@ -2,7 +2,7 @@ package com.baron.entrance.downloader;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-import us.codecraft.webmagic.downloader.HttpClientDownloader;
+import com.baron.backend.common.webmagic.downloader.HttpClientDownloader;
 
 /**
  * Created by Baron.Chen on 2017/6/15.

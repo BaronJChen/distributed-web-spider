@@ -14,6 +14,6 @@ import org.springframework.context.annotation.Configuration;
 public class EntranceConfiguration {
     @Bean
     public CommandLineRunner setApplicationContext(ApplicationContext applicationContext) {
-        return args -> AppCache.put(AppConstants.CACHE_SPRING_APPLICATON_CONTEXT, applicationContext);
+        return null;
     }
 }

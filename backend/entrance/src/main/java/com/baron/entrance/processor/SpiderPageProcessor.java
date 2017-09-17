@@ -4,9 +4,9 @@ import com.baron.entrance.model.SpiderTask;
 import com.baron.entrance.model.SpiderTemplate;
 import com.baron.entrance.program.AppCache;
 import com.baron.entrance.program.AppConstants;
-import us.codecraft.webmagic.Page;
-import us.codecraft.webmagic.Site;
-import us.codecraft.webmagic.processor.PageProcessor;
+import com.baron.backend.common.webmagic.Page;
+import com.baron.backend.common.webmagic.Site;
+import com.baron.backend.common.webmagic.processor.PageProcessor;
 
 /**
  * Created by Jason on 2017/6/13.

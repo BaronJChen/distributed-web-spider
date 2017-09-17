@@ -4,5 +4,5 @@ package com.baron.entrance.model;
  * Created by Jason on 2017/6/13.
  */
 public enum State {
-    RUNNING, STOPPED, SUSPENDED, SUCCEEDED, FAILED
+    CREATING, RUNNING, STOPPED, SUSPENDED, SUCCEEDED, FAILED
 }

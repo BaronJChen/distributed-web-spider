@@ -1,7 +1,7 @@
 package com.baron.entrance.filter;
 
-import us.codecraft.webmagic.Page;
-import us.codecraft.webmagic.ResultItems;
+import com.baron.backend.common.webmagic.Page;
+import com.baron.backend.common.webmagic.ResultItems;
 
 /**
  * Created by Jason on 2017/6/11.

@@ -1,9 +1,13 @@
 package com.baron.entrance.model;
 
+import com.baron.backend.common.model.BaseModel;
+import lombok.Builder;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.validation.constraints.NotNull;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -12,18 +16,14 @@ import java.util.Map;
  */
 @Data
 @Document
-public class SpiderTemplate {
-    @Id
-    private String id;
-    // 模板的名称
+public class SpiderTemplate extends BaseModel {
+    @NotNull
     private String name;
-    // 模板作用的域
+    @NotNull
     private String domain;
-    // 起始URL
-    private List<String> seeds;
-    // 线程的数量
-    private Integer threadCount;
 
+    private List<String> seeds;
+    private Integer threadCount;
     private Integer retryCount;
     private Integer sleepTime;
     private Long maxPageCount;
@@ -36,8 +36,25 @@ public class SpiderTemplate {
     private Map<String, String> tags;
     private List<String> taskCallbacks;
     private List<String> unitCallbacks;
-    private List<String> filters;
-    private List<String> pipelines;
-    private String pageProcessor;
 
+    @NotNull
+    private Boolean useProxy;
+    @NotNull
+    private List<String> analysors;
+    @NotNull
+    private List<String> downloaders;
+    @NotNull
+    private List<String> filters;
+    @NotNull
+    private List<String> pipelines;
+    @NotNull
+    private List<String> processors;
+    @NotNull
+    private List<String> registrar;
+
+    public SpiderTemplate() {
+        if (seeds == null || seeds.isEmpty()) {
+            seeds = Arrays.asList(domain);
+        }
+    }
 }

@@ -1,21 +1,22 @@
 package com.baron.entrance.manager.cache;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.BoundValueOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 
 @Component
-public class DefaultCacheManagerImpl implements CacheManager {
+public class DefaultCacheManagerImpl<K, V> implements CacheManager<K, V> {
     @Autowired
-    RedisTemplate<Object, Object> redisTemplate;
+    RedisTemplate<K, V> redisTemplate;
 
     @Override
-    public <T> T get(Object key) {
-        return null;
+    public V get(K key) {
+        return redisTemplate.boundValueOps(key).get();
     }
 
     @Override
-    public void put(Object key, Object value) {
-
+    public void put(K key, V value) {
+        redisTemplate.boundValueOps(key).set(value);
     }
 }

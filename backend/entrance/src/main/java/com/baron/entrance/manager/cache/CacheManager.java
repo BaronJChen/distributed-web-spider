@@ -1,6 +1,6 @@
 package com.baron.entrance.manager.cache;
 
-public interface CacheManager {
-    <T> T get(Object key);
-    void put(Object key, Object value);
+public interface CacheManager<K, V> {
+    V get(K key);
+    void put(K key, V value);
 }

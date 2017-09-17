@@ -4,9 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Component;
-import us.codecraft.webmagic.ResultItems;
-import us.codecraft.webmagic.Task;
-import us.codecraft.webmagic.pipeline.Pipeline;
+import com.baron.backend.common.webmagic.ResultItems;
+import com.baron.backend.common.webmagic.Task;
+import com.baron.backend.common.webmagic.pipeline.Pipeline;
 
 /**
  * Created by Baron.Chen on 2017/6/15.

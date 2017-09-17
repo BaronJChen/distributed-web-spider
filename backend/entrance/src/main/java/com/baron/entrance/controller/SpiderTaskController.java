@@ -1,5 +1,6 @@
 package com.baron.entrance.controller;
 
+import com.baron.entrance.model.SpiderTask;
 import com.baron.entrance.service.SpiderTaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +18,7 @@ public class SpiderTaskController {
     private SpiderTaskService spiderTaskService;
 
     @RequestMapping(method = RequestMethod.POST)
-    public String add(@RequestParam String spiderTemplateId) {
-        return null;
+    public SpiderTask add(@RequestParam String spiderTemplateId) {
+        return spiderTaskService.add(spiderTemplateId);
     }
 }

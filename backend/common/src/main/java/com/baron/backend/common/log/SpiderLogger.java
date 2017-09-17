@@ -1,9 +1,10 @@
 package com.baron.backend.common.log;
 
 import com.alibaba.fastjson.JSON;
-import com.baron.backend.common.program.RequestContext;
+import com.baron.backend.common.program.CommonRequestContext;
 import com.baron.backend.common.model.SpiderLog;
 import ch.qos.logback.classic.Level;
+import org.apache.log4j.Logger;
 import org.springframework.data.mongodb.core.MongoTemplate;
 
 /**
@@ -13,7 +14,7 @@ import org.springframework.data.mongodb.core.MongoTemplate;
  * @date 2017/9/16 12:22
  */
 
-public class SpiderLogger extends org.apache.log4j.Logger {
+public class SpiderLogger extends Logger {
     protected SpiderLogger(String name) {
         super(name);
     }
@@ -32,7 +33,6 @@ public class SpiderLogger extends org.apache.log4j.Logger {
 
     public void spiderDebug(Object message) {
         spiderLog(message, Level.DEBUG, null);
-
     }
 
     public void spiderInfo(Object message) {
@@ -41,7 +41,6 @@ public class SpiderLogger extends org.apache.log4j.Logger {
 
     public void spiderWarn(Object message) {
         spiderLog(message, Level.WARN, null);
-
     }
 
     public void spiderError(Object message, Throwable throwable) {
@@ -49,8 +48,8 @@ public class SpiderLogger extends org.apache.log4j.Logger {
     }
 
     private void spiderLog(Object message, Level level, Throwable throwable) {
-        MongoTemplate mongoTemplate = RequestContext.getContext().getMongoTemplate();
-        String taskId = RequestContext.getContext().getSpiderTaskId();
+        MongoTemplate mongoTemplate = CommonRequestContext.getContext().getMongoTemplate();
+        String taskId = CommonRequestContext.getContext().getSpiderTaskId();
 
         SpiderLog spiderTaskLog = new SpiderLog();
 

@@ -2,7 +2,7 @@ package com.baron.entrance.concurrent;
 
 import com.baron.entrance.exception.MethodNotSupportedException;
 import com.baron.entrance.program.AppConstants;
-import com.baron.entrance.util.ListUtil;
+import com.baron.backend.common.util.ListUtil;
 import com.google.common.base.Preconditions;
 import org.apache.log4j.Logger;
 

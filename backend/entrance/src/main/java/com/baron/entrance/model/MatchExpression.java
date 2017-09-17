@@ -1,25 +1,17 @@
 package com.baron.entrance.model;
 
+import com.baron.backend.common.model.BaseModel;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+
 /**
  * Created by Jason on 2017/6/11.
  */
-public class MatchExpression {
+@Data
+@EqualsAndHashCode(callSuper = true)
+@ToString(callSuper = true)
+public class MatchExpression extends BaseModel {
     private String regex;
     private String xpath;
-
-    public String getRegex() {
-        return regex;
-    }
-
-    public void setRegex(String regex) {
-        this.regex = regex;
-    }
-
-    public String getXpath() {
-        return xpath;
-    }
-
-    public void setXpath(String xpath) {
-        this.xpath = xpath;
-    }
 }
