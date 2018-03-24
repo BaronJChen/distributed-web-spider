@@ -1,2 +1,2 @@
 # distributed-web-spider
-This project is suspended because my work is too business.
+This project is suspended because my work is too busy.
